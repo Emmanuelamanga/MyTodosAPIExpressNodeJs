@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "61d22498-2e52-47ce-acb2-cf33d0a226ee",
+		"name": "MyTodosAPIExpressNodeJs",
+		"description": "This is a simple todo api built on top of [expressjs ](https://expressjs.com/en/5x/api.html) and [node.js](https://nodejs.org/en/about)\n\nGood to note :\n\n- GET \"/\" shows the welcome note.\n- GET \"/todos\" lists all todos in the array.\n- GET \"/todos/:id\" shows the todo for the provided id.\n- POST \"/todos\" saves the todo data { title, description, completed}.\n- PUT \"/todos/:id\" updates the todo by id index {title, description, completed}.\n- DELETE \"/todo/:id\" deletes the todo by id.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3893983"
+	},
+	"item": [
+		{
+			"name": "welcome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				},
+				"description": "Shows the API welcome note."
+			},
+			"response": []
+		},
+		{
+			"name": "allTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos"
+					]
+				},
+				"description": "Returns all the available todos within the array"
+			},
+			"response": []
+		},
+		{
+			"name": "saveTodo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 6,\r\n    \"title\": \"Todo 1\",\r\n    \"desc\": \"This is my first Todo\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos"
+					]
+				},
+				"description": "Saves todo data"
+			},
+			"response": []
+		},
+		{
+			"name": "updateTodo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"title\": \"Todo One\",\r\n    \"desc\": \"This is my first Todo\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/todos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"1"
+					]
+				},
+				"description": "Updates todo by id"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTodo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/todos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"todos",
+						"1"
+					]
+				},
+				"description": "Removes the todo from the array."
+			},
+			"response": []
+		}
+	]
+}
